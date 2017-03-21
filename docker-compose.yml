@@ -15,7 +15,7 @@ services:
     restart: always
     links:
       - gogs:gogs
-      - drone-server:drone-server
+      - drone-master:drone-master
       - registry:registry
 
   gogs:
@@ -27,7 +27,7 @@ services:
     volumes:
       - ./var/gogs:/data
 
-  drone-server:
+  drone-master:
     image: drone/drone:0.5
     ports:
       - "8000"
@@ -47,11 +47,11 @@ services:
     image: drone/drone:0.5
     command: agent
     restart: always
-    depends_on: [ drone-server ]
+    depends_on: [ drone-master ]
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SERVER=ws://drone-master:8000/ws/broker
       - DRONE_SECRET=xFbYh6rV
 
   registry:
