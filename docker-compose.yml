@@ -15,10 +15,10 @@ services:
 
   gogs:
     image: gogs/gogs
-    restart: always
     ports:
       - "3000"
       - "3022:22"
+    restart: always
     volumes:
       - ./var/gogs:/data
 
