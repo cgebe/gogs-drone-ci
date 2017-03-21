@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  nginx:
+    build: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+      - "5443:5443"
+    restart: always
+    links:
+      - drone-server:drone-server
+      - registry:registry
+
+  drone-server:
+    image: drone/drone:0.4
+    ports:
+      - "8000"
+    volumes:
+      - ./drone:/var/lib/drone/
+    restart: always
+    environment:
+      - DRONE_OPEN=true
+      - DRONE_GITLAB=true
+      - DRONE_GITLAB_CLIENT=6eeafe9a1daf9a24bc73d3f7545f5c64408beac974cfb5e748f2cb588e794337
+      - DRONE_GITLAB_SECRET=779c1d0ca7cad8938d6f3dc8b96e54bfff15eb80ccfe94aaded7fdee4e09ebd5
+      - DRONE_GITLAB_URL=https://gitlab.lrz.de
+      - DRONE_GITLAB_SKIP_VERIFY=true
+      - DRONE_SECRET=xFbYh6rV
+    links:
+      - registry:registry
+
+  drone-agent:
+    image: drone/drone:0.4
+    command: agent
+    restart: always
+    depends_on: [ drone-server ]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SECRET=xFbYh6rV
+
+  registry:
+    image: registry:2
+    restart: always
+    ports:
+      - "5000"
+    volumes:
+      - /path/data:/var/lib/registry
