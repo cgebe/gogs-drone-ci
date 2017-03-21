@@ -1,10 +1,9 @@
 # gogs-drone-ci
 
 ## Requirements
-```
-Docker 
-Docker-Compose
-```
+
+* [Docker](https://docs.docker.com/engine/installation/linux/)
+* [Docker-Compose](https://docs.docker.com/compose/install/)
 
 ## Configuration
 
