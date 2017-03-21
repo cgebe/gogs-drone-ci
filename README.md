@@ -36,7 +36,7 @@ E.g.
 
 # Important
 
-* When activating a project in drone, a webhook is created inside the gogs repository. One has to replace the address prefix from https://your-server-address:8443/hook?access_token=... to http://drone-master:8000 in the project settings in order to get the hook working.
+* When activating a project in drone, a webhook is created inside the gogs repository. One has to replace the address prefix from https://your-server-address:8443/hook?access_token=... to http://drone-master:8000/hook?access_token=... in the project settings in order to get the hook working.
 
 
 # Usage
