@@ -13,8 +13,8 @@ RUN mkdir /etc/nginx/auth
 # Copy custom configuration file from the current directory
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Copy nginx.cert and nginx.key (self generated)
-COPY nginx.cert /etc/nginx/ssl/nginx.crt
+# Copy nginx.crt and nginx.key (self generated)
+COPY nginx.crt /etc/nginx/ssl/nginx.crt
 COPY nginx.key /etc/nginx/ssl/nginx.key
 
 # Copy registry.password for docker registry authenication
