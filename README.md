@@ -31,3 +31,12 @@ E.g.
 
 * When not in need of a docker registry, comment out the registry block inside `docker-compose.yml` and the server directive with port 5443 inside `nginx.conf`
 * Otherwise create a htpassword file and place it as `registry.password` in /nginx. This will be authenticated users for the registry
+
+
+# Services
+```
+    Gogs on Port 443
+    Drone on Port 8443
+    Registry on Port 5443
+```
+* HTTP Traffic on port 80 gets redirected to port 443
