@@ -40,9 +40,10 @@ E.g.
 
 
 # Usage
+## Start
 Run `docker-compose up` inside the project directory. This will start all services.
 
-## Services running on following ports
+## Ports
 ```
 Gogs on Port 443
 Drone on Port 8443
