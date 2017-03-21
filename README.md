@@ -18,7 +18,7 @@ Use an officially signed SSL Certificate and Key
 Or generate certificate and key by your own:
 * `sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /nginx/nginx.key -out /nginx/nginx.cert`
 
-## Set Server IP or Domain Name
+## Replacements
 * Change the `{SERVER_IP}` for **each** server_name inside the `/nginx/nginx.conf` file:
 
 E.g. 
@@ -30,12 +30,7 @@ E.g.
     }
 ```
 
-## Drone Secret
-
 * Change the `{DRONE_SECRET}` inside `docker-compose.yml` to a secure string of your choice
-
-## Docker Registry
-
 * When not in need of a docker registry, comment out the registry block inside `docker-compose.yml` and the server directive with port 5443 inside `nginx.conf`
 * Otherwise create a htpassword file and place it as `registry.password` in /nginx. This will be authenticated users for the registry
 
