@@ -38,7 +38,7 @@ services:
       - DRONE_OPEN=true
       - DRONE_SECRET=xFbYh6rV
       - DRONE_GOGS=true
-      - DRONE_GOGS_URL=http://127.0.0.1
+      - DRONE_GOGS_URL=https://46.101.223.213
       - DRONE_GOGS_SKIP_VERIFY=true
     links:
       - registry:registry
