@@ -39,6 +39,10 @@ E.g.
 * When not in need of a docker registry, comment out the registry block inside `docker-compose.yml` and the server directive with port 5443 inside `nginx.conf`
 * Otherwise create a htpassword file and place it as `registry.password` in /nginx. This will be authenticated users for the registry
 
+# Important
+
+* When activating a project in drone, a webhook is created inside the gogs repository. One has to replace the address prefix from https://your-server-address:8443/hook?access_token=... to http://drone-master:8000 in the project settings in order to get the hook working.
+
 
 # Usage
 ```
