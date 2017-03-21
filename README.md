@@ -1,5 +1,7 @@
 # gogs-drone-ci
 
+This project sets up nginx, gogs, drone and a docker registry with ssl on a single machine.
+
 ## Requirements
 
 * [Docker](https://docs.docker.com/engine/installation/linux/)
