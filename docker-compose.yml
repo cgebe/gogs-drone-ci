@@ -38,7 +38,8 @@ services:
       - DRONE_OPEN=true
       - DRONE_SECRET=xFbYh6rV
       - DRONE_GOGS=true
-      - DRONE_GOGS_URL=https://gogs
+      - DRONE_GOGS_URL=http://gogs:3000
+      - DRONE_GOGS_PRIVATE_MODE=true
       - DRONE_GOGS_SKIP_VERIFY=true
     links:
       - registry:registry
