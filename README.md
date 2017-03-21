@@ -1,5 +1,11 @@
 # gogs-drone-ci
 
+## Requirements
+```
+Docker 
+Docker-Compose
+```
+
 ## Configuration
 
 ## SSL Certificate and Key
@@ -35,8 +41,8 @@ E.g.
 
 # Usage
 ```
-    Gogs on Port 443
-    Drone on Port 8443
-    Registry on Port 5443
+Gogs on Port 443
+Drone on Port 8443
+Registry on Port 5443
 ```
 * HTTP Traffic on port 80 gets redirected to port 443
