@@ -19,7 +19,7 @@ Or generate certificate and key by your own:
 * `sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /nginx/nginx.key -out /nginx/nginx.cert`
 
 ## Set Server IP or Domain Name
-* Change the {SERVER_IP} for **each** server_name inside the `/nginx/nginx.conf` file:
+* Change the `{SERVER_IP}` for **each** server_name inside the `/nginx/nginx.conf` file:
 
 E.g. 
 ```
@@ -32,7 +32,7 @@ E.g.
 
 ## Drone Secret
 
-* Change the {DRONE_SECRET} inside `docker-compose.yml` to a secure string of your choice
+* Change the `{DRONE_SECRET}` inside `docker-compose.yml` to a secure string of your choice
 
 ## Docker Registry
 
