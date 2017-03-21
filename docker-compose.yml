@@ -11,12 +11,7 @@ services:
       - "8443:8443"
       # docker registry ports
       - "5443:5443"
-
     restart: always
-    links:
-      - gogs:gogs
-      - drone-master:drone-master
-      - registry:registry
 
   gogs:
     image: gogs/gogs
@@ -41,8 +36,6 @@ services:
       - DRONE_GOGS_URL=http://gogs:3000
       - DRONE_GOGS_PRIVATE_MODE=true
       - DRONE_GOGS_SKIP_VERIFY=true
-    links:
-      - registry:registry
 
   drone-agent:
     image: drone/drone:0.5
