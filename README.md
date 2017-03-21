@@ -33,7 +33,7 @@ E.g.
 * Otherwise create a htpassword file and place it as `registry.password` in /nginx. This will be authenticated users for the registry
 
 
-# Services
+# Usage
 ```
     Gogs on Port 443
     Drone on Port 8443
