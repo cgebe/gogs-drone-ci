@@ -16,7 +16,7 @@ Use an officially signed SSL Certificate and Key
 * Comment out `DRONE_GOGS_SKIP_VERIFY=true` inside `docker-compose.yml`
 
 Or generate certificate and key by your own:
-* `sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /nginx/nginx.key -out /nginx/nginx.cert`
+* `sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /nginx/nginx.key -out /nginx/nginx.crt`
 
 ## Replacements
 * Change the `{SERVER_IP}` for **each** server_name inside the `/nginx/nginx.conf` file:
